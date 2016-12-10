@@ -10,7 +10,7 @@ gulp.task('default', function () {
   .pipe(uglify())
   .pipe(gulp.dest('./wp-content/themes/jadle/assets/js'));
 
-  gulp.src('./styles/**/*.scss')
+  gulp.src('./styles/application.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest('./wp-content/themes/jadle/assets/css'));
 
