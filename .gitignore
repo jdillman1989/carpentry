@@ -64,3 +64,4 @@ node_modules/
 # ignore installation config files
 bin/config.sh
 bin/installStaging.sh
+tmp

@@ -14,7 +14,6 @@ class Home_Service {
 	public function load_view() {
 
 		$context = Timber::get_context();
-		$context['data'] = $this->data;
 		$context['images_uri'] = _images_uri;
 
 		//// Example post query on homepage
