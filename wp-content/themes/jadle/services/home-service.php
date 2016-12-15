@@ -68,7 +68,5 @@ class Home_Service {
 		// }
 
 		// $context['event_data'] = $event_data;
-
-		Timber::render( theme_views . '/home.twig', $context);
 	}
 }
