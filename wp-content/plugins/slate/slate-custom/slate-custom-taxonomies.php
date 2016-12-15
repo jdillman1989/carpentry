@@ -27,7 +27,7 @@ class Slate_Custom_Taxonomies {
     public function slate_taxonomy_init() {
 
 
-      new Slate_Taxonomy('Category', 'news');
+      // new Slate_Taxonomy('Category', 'news');
       
         // $custom_post_taxonomies = array("News", "Events", "Jobs");
 

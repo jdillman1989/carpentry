@@ -27,12 +27,12 @@ class Slate_Custom_Post_Types {
      */
     public function slate_post_type_init() {
 
-        $custom_post_types = array("News", "Affiliates", "Businesses");
+        // $custom_post_types = array("News", "Affiliates", "Businesses");
 
-        foreach($custom_post_types as $pt ) {
+        // foreach($custom_post_types as $pt ) {
 
-            new Slate_Post_Type($pt, array('has_archive' => true, 'supports' => array('title', 'editor', 'page-attributes', 'excerpt', 'custom-fields', 'revisions')));
-        }
+        //     new Slate_Post_Type($pt, array('has_archive' => true, 'supports' => array('title', 'editor', 'page-attributes', 'excerpt', 'custom-fields', 'revisions')));
+        // }
 
     }
 
