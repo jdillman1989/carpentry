@@ -5,7 +5,7 @@
 // Load the theme assets.
 new _Container("Assets_Service");
 
-new _Container("AJAX_Service");
+// new _Container("AJAX_Service");
 
 if ( function_exists( 'acf_add_options_sub_page' ) ){
 
