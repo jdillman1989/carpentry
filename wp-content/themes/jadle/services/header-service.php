@@ -42,6 +42,6 @@ class Header_Service {
 		$context['phone_formatted'] = $phone_formatted;
 		$context['phone'] = $phone;
 
-		Timber::render( theme_views . '/home.twig', $context);
+		Timber::render( theme_views . '/header.twig', $context);
 	}
 }
