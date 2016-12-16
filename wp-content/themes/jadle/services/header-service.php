@@ -33,8 +33,6 @@ class Header_Service {
 
 		$context['social_data'] = $social_data;
 
-		var_dump($social_data);
-
 		$phone = get_field('phone', 'options');
 		$stripped_phone = preg_replace("/[^\d]/", "", $phone);
 		$phone_formatted = preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $stripped_phone);
