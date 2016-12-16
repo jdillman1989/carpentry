@@ -1,5 +1,6 @@
 <?php
 // Bring your own comments.
+echo 'test';
 global $post;
 
 add_filter('body_class', function() {
