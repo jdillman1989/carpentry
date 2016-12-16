@@ -7,6 +7,21 @@ new _Container("Assets_Service");
 
 // new _Container("AJAX_Service");
 
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Site Sidebar',
+        'menu_title'    => 'Site Sidebar',
+        'menu_slug'     => 'site-sidebar'
+    ));
+
+    acf_add_options_page(array(
+        'page_title'    => 'Site Settings',
+        'menu_title'    => 'Site Settings',
+        'menu_slug'     => 'site-settings'
+    ));
+}
+
 if ( function_exists( 'acf_add_options_sub_page' ) ){
 
     // // Example options custom post type page
@@ -23,21 +38,6 @@ if ( function_exists( 'acf_add_options_sub_page' ) ){
     acf_add_options_sub_page(array(
         'title'      => 'Search Results Page',
         'parent'     => 'admin.php?page=site-settings'
-    ));
-}
-
-if( function_exists('acf_add_options_page') ) {
-
-    acf_add_options_page(array(
-        'page_title'    => 'Main Menu',
-        'menu_title'    => 'Main Menu',
-        'menu_slug'     => 'main-menu'
-    ));
-
-    acf_add_options_page(array(
-        'page_title'    => 'Site Settings',
-        'menu_title'    => 'Site Settings',
-        'menu_slug'     => 'site-settings'
     ));
 }
 
