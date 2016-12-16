@@ -389,11 +389,12 @@ class Post extends Core implements CoreInterface {
 	 */
 	public function get_preview( $len = 50, $force = false, $readmore = 'Read More', $strip = true, $end = '&hellip;' ) {
 		$text = '';
+		$link = '';
 		$trimmed = false;
 		$last_p_tag = null;
-		if ( isset($this->post_excerpt) && strlen($this->post_excerpt) ) {
+		if ( isset($this->post_excerpt) && strlen(trim($this->post_excerpt)) ) {
 			if ( $force ) {
-				$text = Helper::trim_words($this->post_excerpt, $len, false);
+				$text = TextHelper::trim_words($this->post_excerpt, $len, false);
 				$trimmed = true;
 			} else {
 				$text = $this->post_excerpt;
@@ -403,13 +404,13 @@ class Post extends Core implements CoreInterface {
 			$pieces = explode($readmore_matches[0], $this->post_content);
 			$text = $pieces[0];
 			if ( $force ) {
-				$text = Helper::trim_words($text, $len, false);
+				$text = TextHelper::trim_words($text, $len, false);
 				$trimmed = true;
 			}
 			$text = do_shortcode($text);
 		}
 		if ( !strlen($text) ) {
-			$text = Helper::trim_words($this->get_content(), $len, false);
+			$text = TextHelper::trim_words($this->get_content(), $len, false);
 			$trimmed = true;
 		}
 		if ( !strlen(trim($text)) ) {
@@ -436,10 +437,11 @@ class Post extends Core implements CoreInterface {
 			}
 			$read_more_class = apply_filters('timber/post/get_preview/read_more_class', "read-more");
 			if ( $readmore && isset($readmore_matches) && !empty($readmore_matches[1]) ) {
-				$text .= ' <a href="'.$this->link().'" class="'.$read_more_class.'">'.trim($readmore_matches[1]).'</a>';
+				$link = ' <a href="'.$this->link().'" class="'.$read_more_class.'">'.trim($readmore_matches[1]).'</a>';
 			} elseif ( $readmore ) {
-				$text .= ' <a href="'.$this->link().'" class="'.$read_more_class.'">'.trim($readmore).'</a>';
+				$link = ' <a href="'.$this->link().'" class="'.$read_more_class.'">'.trim($readmore).'</a>';
 			}
+			$text .= apply_filters('timber/post/get_preview/read_more_link', $link);
 			if ( !$strip && $last_p_tag && (strpos($text, '<p>') || strpos($text, '<p ')) ) {
 				$text .= '</p>';
 			}
@@ -450,12 +452,9 @@ class Post extends Core implements CoreInterface {
 	/**
 	 * gets the post custom and attaches it to the current object
 	 * @internal
-	 * @param bool|int $pid a post ID number
+	 * @param integer $pid a post ID number
 	 */
-	public function import_custom( $pid = false ) {
-		if ( !$pid ) {
-			$pid = $this->ID;
-		}
+	public function import_custom( $pid ) {
 		$customs = $this->get_post_custom($pid);
 		$this->import($customs);
 	}
@@ -534,6 +533,29 @@ class Post extends Core implements CoreInterface {
 	 * Get the terms associated with the post
 	 * This goes across all taxonomies by default
 	 * @api
+	 * @example
+	 * ```twig
+	 * <section id="job-feed">
+	 * {% for post in job %}
+	 * <div class="job">
+	 *   <h2>{{ post.title }}</h2> 
+	 *    <p>{{ post.terms('category') | join(', ') }}
+	 *  </div>
+	 * {% endfor %}    
+	 * </section>
+	 * ```
+	 * ```html
+	 * <section id="job-feed">
+	 *   <div class="job">
+	 * 	   <h2>Cheese Maker</h2>
+	 *     <p>Food, Cheese, Fromage</p>
+	 *   </div>
+	 *   <div class="job">
+	 * 	   <h2>Mime</h2>
+	 *     <p>Performance, Silence</p>
+	 *   </div>
+	 * </section>
+	 * ```
 	 * @param string|array $tax What taxonom(y|ies) to pull from. Defaults to all registered taxonomies for the post type. You can use custom ones, or built-in WordPress taxonomies (category, tag). Timber plays nice and figures out that tag/tags/post_tag are all the same (and categories/category), for custom taxonomies you're on your own.
 	 * @param bool $merge Should the resulting array be one big one (true)? Or should it be an array of sub-arrays for each taxonomy (false)?
 	 * @return array
@@ -652,7 +674,7 @@ class Post extends Core implements CoreInterface {
 	 * @return boolean
 	 */
 	public function has_field( $field_name ) {
-		return (!$this->get_field( $field_name )) ? false : true;
+		return (!$this->get_field($field_name)) ? false : true;
 	}
 
 
@@ -756,7 +778,13 @@ class Post extends Core implements CoreInterface {
 	 * @return User|null A User object if found, false if not
 	 */
 	public function author() {
-		return $this->get_author();
+		if ( isset($this->post_author) ) {
+			return new User($this->post_author);
+		}
+	}
+
+	public function authors() {
+		return apply_filters('timber/post/authors', array($this->author()), $this);
 	}
 
 	/**
@@ -772,7 +800,7 @@ class Post extends Core implements CoreInterface {
 	 */
 	public function modified_author() {
 		$user_id = get_post_meta($this->ID, '_edit_last', true);
-		return ($user_id ? new User($user_id) : $this->get_author());
+		return ($user_id ? new User($user_id) : $this->author());
 	}
 
 	/**
@@ -807,7 +835,7 @@ class Post extends Core implements CoreInterface {
 	 *     {% endfor %}
 	 * {% endif %}
 	 * ```
-	 * @param string $post_type _optional_ use to find children of a particular post type (attachment vs. page for example). You might want to restrict to certain types of children in case other stuff gets all mucked in there. You can use 'parent' to use the parent's post type
+	 * @param string|array $post_type _optional_ use to find children of a particular post type (attachment vs. page for example). You might want to restrict to certain types of children in case other stuff gets all mucked in there. You can use 'parent' to use the parent's post type or you can pass an array of post types.
 	 * @param string|bool $childPostClass _optional_ a custom post class (ex: 'MyTimber\Post') to return the objects as. By default (false) it will use Timber\Post::$post_class value.
 	 * @return array
 	 */
@@ -818,7 +846,14 @@ class Post extends Core implements CoreInterface {
 		if ( $post_type == 'parent' ) {
 			$post_type = $this->post_type;
 		}
-		$children = get_children('post_parent='.$this->ID.'&post_type='.$post_type.'&numberposts=-1&orderby=menu_order title&order=ASC&post_status=publish');
+		if ( is_array($post_type) ) {
+			$post_type = implode('&post_type[]=', $post_type);
+		}
+		$query = 'post_parent='.$this->ID.'&post_type[]='.$post_type.'&numberposts=-1&orderby=menu_order title&order=ASC&post_status[]=publish';
+		if ( $this->post_status == 'publish' ) {
+			$query .= '&post_status[]=inherit';
+		}
+		$children = get_children($query);
 		foreach ( $children as &$child ) {
 			$child = new $childPostClass($child->ID);
 		}
@@ -910,6 +945,20 @@ class Post extends Core implements CoreInterface {
 	}
 
 	/**
+	 * If the Password form is to be shown, show it!
+	 * @return string|void
+	 */
+	protected function maybe_show_password_form(){
+		if ( $this->password_required() ) {
+			$show_pw = false;
+			$show_pw = apply_filters('timber/post/content/show_password_form_for_protected', $show_pw);
+			if ($show_pw) {
+				return apply_filters('timber/post/content/password_form', get_the_password_form($this->ID), $this);
+			}
+		}
+	}
+
+	/**
 	 * Gets the actual content of a WP Post, as opposed to post_content this will run the hooks/filters attached to the_content. \This guy will return your posts content with WordPress filters run on it (like for shortcodes and wpautop).
 	 * @api
 	 * @example
@@ -923,6 +972,9 @@ class Post extends Core implements CoreInterface {
 	 * @return string
 	 */
 	public function content( $page = 0, $len = -1 ) {
+		if ( $form = $this->maybe_show_password_form() ) {
+			return $form;
+		}
 		if ( $len == -1 && $page == 0 && $this->_content ) {
 			return $this->_content;
 		}
@@ -1042,6 +1094,15 @@ class Post extends Core implements CoreInterface {
 	 */
 	public function format() {
 		return get_post_format($this->ID);
+	}
+	
+	/**
+	 * whether post requires password and correct password has been provided
+	 * @api
+	 * @return boolean
+	 */
+	public function password_required() {
+		return post_password_required($this->ID);
 	}
 
 	/**
@@ -1261,13 +1322,11 @@ class Post extends Core implements CoreInterface {
 	 * @return TimberImage|null of your thumbnail
 	 */
 	public function thumbnail() {
-		if ( function_exists('get_post_thumbnail_id') ) {
-			$tid = get_post_thumbnail_id($this->ID);
-			if ( $tid ) {
-				//return new Image($tid);
-				return new $this->ImageClass($tid);
-			}
-		}
+		$tid = get_post_thumbnail_id($this->ID);
+		if ( $tid ) {
+			//return new Image($tid);
+			return new $this->ImageClass($tid);
+		}	
 	}
 
 
@@ -1403,8 +1462,8 @@ class Post extends Core implements CoreInterface {
 	 * @param bool $merge Should the resulting array be one big one (true)? Or should it be an array of sub-arrays for each taxonomy (false)?
 	 * @return array
 	 */
-	public function get_terms( $tax = '', $merge = true ) {
-		return $this->terms($tax, $merge);
+	public function get_terms( $tax = '', $merge = true, $TermClass = '' ) {
+		return $this->terms($tax, $merge, $TermClass);
 	}
 
 	/**
@@ -1509,9 +1568,7 @@ class Post extends Core implements CoreInterface {
 	 * @return User|null
 	 */
 	public function get_author() {
-		if ( isset($this->post_author) ) {
-			return new User($this->post_author);
-		}
+		return $this->author();
 	}
 
 	/**

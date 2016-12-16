@@ -27,7 +27,7 @@ class Header_Service {
 
 			$social_data[] = array(
 				'url' => $link['social_media_url'],
-				'icon' => file_get_contents($theme.'/assets/img/'.$domain.'.svg');
+				'icon' => file_get_contents($theme.'/assets/img/'.$domain.'.svg')
 			);
 		}
 
