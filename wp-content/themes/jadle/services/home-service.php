@@ -17,6 +17,7 @@ class Home_Service {
 		$context['images_uri'] = _images_uri;
 		// $context['data'] = $this->data;
 		$context['content'] = get_the_content();
+		var_dump($context['content']);
 		Timber::render( theme_views . '/home.twig', $context);
 	}
 }
