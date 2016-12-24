@@ -181,11 +181,12 @@ header{
 
 		@include breakpoint($breakpoint2) {
 			position: fixed;
-			top: 66px;
+			top: 79px;
 			left: 100%;
 			background-color: $main; 
 			z-index: 3;
 			width: 300px; 
+			padding: $padding1 0;
 		}
 	}
 
