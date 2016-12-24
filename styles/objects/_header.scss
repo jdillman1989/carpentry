@@ -6,7 +6,9 @@ header{
 	
 	a{
 		color: $secondary;
-		font-size: $fontsizeM; 
+		font-size: $fontsizeL; 
+		text-decoration: none;
+		margin-bottom: 15px; 
 	}
 	
 	.main-info{
@@ -26,6 +28,7 @@ header{
 			a{
 				display: block;
 				width: 100%; 
+				font-size: $fontsizeM;
 			}
 		}
 	}
