@@ -73,7 +73,7 @@ header{
 			margin-bottom: 15px;
 			
 			@include breakpoint($breakpoint2) {
-				padding: $padding2;
+				padding: 0 $padding2;
 			}
 			
 			a{
@@ -110,7 +110,7 @@ header{
 			padding: 0 $padding1;
 			
 			@include breakpoint($breakpoint2) {
-				padding: $padding2;
+				padding: 0 $padding2;
 			} 
 			
 			a{
@@ -118,7 +118,11 @@ header{
 				width: 100%; 
 				font-size: $fontsizeS;
 				font-family: $body;
-				color: $tertiary; 
+				color: $tertiary;
+				
+				&:hover{
+					text-decoration: underline;
+				}
 				
 				@include breakpoint($breakpoint1) {
 					font-size: $fontsizeXS; 
