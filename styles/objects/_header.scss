@@ -5,7 +5,7 @@ header{
 	width: 30%;
 	background-color: $main;
 	color: $secondary;
-	
+	padding: $padding1 0;
 	 
 	@include breakpoint($breakpoint2) {
 		padding: 13px;
@@ -38,7 +38,7 @@ header{
 	
 		
 	.logo{
-		padding: $padding1;
+		padding: 0 $padding1;
 		margin-bottom: 20px;
 		
 		@include breakpoint($breakpoint2) {
@@ -67,7 +67,7 @@ header{
 	.nav-section{
 		
 		.social-nav{
-			padding: $padding1;
+			padding: 0 $padding1;
 			display: flex;
 			justify-content: space-around;
 			margin-bottom: 15px;
@@ -94,6 +94,7 @@ header{
 				display: block;
 				width: 100%; 
 				padding: 7.5px $padding1;
+				margin-bottom: 0; 
 				
 				&:hover{
 					background-color: $black; 
@@ -106,7 +107,7 @@ header{
 		}
 
 		.info{
-			padding: $padding1;
+			padding: 0 $padding1;
 			
 			@include breakpoint($breakpoint2) {
 				padding: $padding2;
