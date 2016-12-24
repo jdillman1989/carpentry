@@ -13,10 +13,13 @@ class Home_Service {
 
 	public function load_view() {
 
+		global $post;
+		setup_postdata($post);
+
 		$context = Timber::get_context();
 		$context['images_uri'] = _images_uri;
 		// $context['data'] = $this->data;
-		$context['home_content'] = '<p>This is a test for the home page</p>';
+		$context['home_content'] = get_the_content();
 		var_dump($context['home_content']);
 		Timber::render( theme_views . '/home.twig', $context);
 	}
