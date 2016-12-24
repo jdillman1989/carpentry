@@ -30,24 +30,25 @@ jQuery(document).ready(function() {
 
 	// mobile nav
 	var mobileOpenState = false;
+	var mobileNav = jQuery('#mobileNav');
 
 	jQuery(window).resize(function() {
 		if (jQuery(window).width() > 760 ) {
 			sidebar.css({"transform":"translate(0px, 0px)"});
-			jQuery(this).removeClass('open');
+			mobileNav.removeClass('open');
 			mobileOpenState = false;
 		}
 	});
 
-	jQuery('#mobileNav').click(function() {
+	mobileNav.click(function() {
 		if (mobileOpenState) {
 			sidebar.css({"transform":"translate(0px, 0px)"});
-			jQuery(this).removeClass('open');
+			mobileNav.removeClass('open');
 			mobileOpenState = false;
 		} 
 		else{
 			sidebar.css({"transform":"translate(" + -1 * (sidebar.outerWidth()) + "px, 0px)"});
-			jQuery(this).addClass('open');
+			mobileNav.addClass('open');
 			mobileOpenState = true;
 		};
 	});
