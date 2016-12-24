@@ -4,6 +4,11 @@ header{
 	color: $secondary;
 	padding: 15px; 
 	
+	a{
+		color: $secondary;
+		font-size: $fontsizeM; 
+	}
+	
 	.main-info{
 		
 		.logo{
