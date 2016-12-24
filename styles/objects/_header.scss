@@ -148,4 +148,25 @@ header{
 			transform: translate(-300px, 0px);  
 		}
 	}
+
+	.featured-link{
+		position: fixed;
+		left: $padding1;
+		bottom: $padding1;
+		
+		a{
+			display: block;
+			font-size: $fontsizeS;
+			font-family: $body;
+			color: $main;
+			
+			span{
+				display: inline-block;
+			}
+
+			svg{
+				display: inline-block;
+			}
+		}
+	}
 }

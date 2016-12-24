@@ -1,6 +1,8 @@
 {
 	"acf_fields": [
 		"main_navigation_links",
-		"email"
+		"email",
+		"featured_link",
+		"featured_link_url"
 	]
 }

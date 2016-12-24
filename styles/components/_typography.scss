@@ -9,6 +9,7 @@ $fontsizeL: 2em;
 $fontsizeM: 1.5em;
 $fontsizeS: 1em;
 $fontsizeXS: 0.8em;
+$fontsizeMargin: 0.5em;
 
 a{
 	text-decoration: underline;
@@ -28,24 +29,24 @@ p{
 	line-height: 1.2; 
 	
 	&:not(:last-of-type){
-		margin-bottom: $fontsizeS;
+		margin-bottom: $fontsizeMargin;
 	}
 }
 
 h3{
 	font-size: $fontsizeM;
 	font-family: $headline;
-	margin-bottom: $fontsizeS;
+	margin-bottom: $fontsizeMargin;
 }
 
 h2{
 	font-size: $fontsizeL;
 	font-family: $headline;
-	margin-bottom: $fontsizeS;
+	margin-bottom: $fontsizeMargin;
 }
 
 h1{
 	font-size: $fontsizeXL;
 	font-family: $headline;
-	margin-bottom: $fontsizeS;
+	margin-bottom: $fontsizeMargin;
 }
