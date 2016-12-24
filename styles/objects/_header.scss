@@ -24,6 +24,10 @@ header{
 		@include breakpoint($breakpoint1) {
 			font-size: $fontsizeS; 
 		}
+
+		@include breakpoint($breakpoint2) {
+			font-size: $fontsizeM; 
+		}
 	}
 	
 		
@@ -88,6 +92,10 @@ header{
 				@include breakpoint($breakpoint1) {
 					font-size: $fontsizeXS; 
 				}
+
+				@include breakpoint($breakpoint2) {
+					font-size: $fontsizeS; 
+				}
 			}
 		}
 
@@ -98,6 +106,7 @@ header{
 			background-color: $main; 
 			z-index: 3;
 			width: 280px;
+			padding: 20px; 
 			transform: translate(-280px, 0px);  
 		}
 	}
