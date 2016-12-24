@@ -65,6 +65,17 @@ header{
 	}
 
 	.nav-section{
+
+		&.stick{
+			position: fixed !important;
+			width: 30%;
+			top: 0;
+			left: $padding1;
+			
+			@include breakpoint($breakpoint1) {
+				left: $padding2;
+			}
+		}
 		
 		.social-nav{
 			padding: 0 $padding1;
@@ -154,7 +165,7 @@ header{
 		left: $padding1;
 		bottom: $padding1;
 		
-		@include breakpoint($breakpoint2) {
+		@include breakpoint($breakpoint1) {
 			left: $padding2;
 			bottom: $padding2;
 		}
