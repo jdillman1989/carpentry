@@ -1,7 +1,15 @@
-@include breakpoint($breakpoint2) {
+@include breakpoint($breakpoint1) {
 	#global-content{
 		#sb_instagram.sbi_col_3 #sbi_images .sbi_item{
-			width: 50% !important;
+			width: 50%;
+		}
+	}
+}
+
+@include breakpoint($breakpoint3) {
+	#global-content{
+		#sb_instagram.sbi_col_3 #sbi_images .sbi_item{
+			width: 100%;
 		}
 	}
 }
