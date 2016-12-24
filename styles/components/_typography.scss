@@ -34,15 +34,18 @@ p{
 
 h3{
 	font-size: $fontsizeM;
-	font-family: $headline; 
+	font-family: $headline;
+	margin-bottom: $fontsizeS;
 }
 
 h2{
 	font-size: $fontsizeL;
-	font-family: $headline; 
+	font-family: $headline;
+	margin-bottom: $fontsizeS;
 }
 
 h1{
 	font-size: $fontsizeXL;
-	font-family: $headline; 
+	font-family: $headline;
+	margin-bottom: $fontsizeS;
 }
