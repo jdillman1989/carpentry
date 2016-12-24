@@ -158,7 +158,11 @@ header{
 			display: block;
 			font-size: $fontsizeS;
 			font-family: $body;
-			color: $main;
+			color: $secondary;
+			
+			&:hover{
+				text-decoration: underline;
+			}
 			
 			span{
 				display: inline-block;
@@ -166,6 +170,8 @@ header{
 
 			svg{
 				display: inline-block;
+				width: auto;
+				height: 100%;
 			}
 		}
 	}
