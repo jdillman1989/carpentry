@@ -15,7 +15,7 @@ class Error_Service {
 
 		$context = Timber::get_context();
 		Timber::render( theme_views . '/error.twig', $context);
-		$context['error_title'] = get_field('error_title', 'option');
-		$context['error_message'] = get_field('error_message', 'option');
+		$context['error_title'] = get_field('error_title', 'options');
+		$context['error_message'] = get_field('error_message', 'options');
 	}
 }
