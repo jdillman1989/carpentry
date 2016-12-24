@@ -159,6 +159,8 @@ header{
 			font-size: $fontsizeS;
 			font-family: $body;
 			color: $secondary;
+			vertical-align: middle;
+			height: 25px; 
 			
 			&:hover{
 				text-decoration: underline;
