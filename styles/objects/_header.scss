@@ -2,7 +2,12 @@ header{
 	width: 30%;
 	background-color: $main;
 	color: $secondary;
-	padding: 25px; 
+	padding: 25px;
+	 
+	@include breakpoint($breakpoint2) {
+		padding: 20px;
+		width: 100%;   
+	}
 	
 	a{
 		color: $secondary;
@@ -24,6 +29,11 @@ header{
 		
 	.logo{
 		margin-bottom: 20px;
+		
+		@include breakpoint($breakpoint2) {
+			margin-bottom: 0; 
+			height: 50px;   
+		}
 		
 		a{
 			
@@ -68,6 +78,12 @@ header{
 					font-size: $fontsizeXS; 
 				}
 			}
+		}
+
+		@include breakpoint($breakpoint2) {
+			position: fixed;
+			top: 0;
+			right: 100%;  
 		}
 	}
 }
