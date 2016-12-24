@@ -96,6 +96,9 @@ header{
 			top: 0;
 			left: 100%;
 			background-color: $main; 
+			z-index: 3;
+			width: 280px;
+			transform: translate(-280px, 0px);  
 		}
 	}
 }
