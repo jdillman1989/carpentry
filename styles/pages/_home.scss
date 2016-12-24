@@ -1,7 +1,7 @@
 @include breakpoint($breakpoint2) {
-	main{
+	#global-content{
 		#sb_instagram.sbi_col_3 #sbi_images .sbi_item{
-			width: 50%;
+			width: 50% !important;
 		}
 	}
 }
