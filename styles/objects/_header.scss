@@ -6,9 +6,10 @@ header{
 	
 	a{
 		color: $secondary;
-		font-size: $fontsizeL; 
+		font-size: $fontsizeM; 
 		text-decoration: none;
 		margin-bottom: 15px; 
+		font-family: $headline; 
 	}
 	
 	.main-info{
@@ -28,7 +29,8 @@ header{
 			a{
 				display: block;
 				width: 100%; 
-				font-size: $fontsizeM;
+				font-size: $fontsizeS;
+				font-family: $body 
 			}
 		}
 	}
@@ -37,7 +39,7 @@ header{
 		
 		.social-nav{
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			
 			a{
 				display: inline-block;
