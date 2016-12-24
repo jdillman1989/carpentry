@@ -3,10 +3,12 @@ header{
 	background-color: $main;
 	color: $secondary;
 	padding: 25px;
+	
 	 
 	@include breakpoint($breakpoint2) {
 		padding: 13px;
-		width: 100%;   
+		width: 100%;
+		position: fixed; 
 	}
 	
 	a{
