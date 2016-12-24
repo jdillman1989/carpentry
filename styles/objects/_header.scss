@@ -7,7 +7,7 @@ header{
 	padding: $padding1 0;
 	 
 	@include breakpoint($breakpoint2) {
-		padding: 13px;
+		padding: 13px 0;
 		width: 100%;
 		position: fixed; 
 		z-index: 4; 
