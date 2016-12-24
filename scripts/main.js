@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
 		if (jQuery(window).width() < 760){
 			sidebar.removeClass( sidebarScroll );
 		}
-	}
+	});
 
 	// mobile nav
 	var mobileOpenState = false;
