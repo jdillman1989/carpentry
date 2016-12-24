@@ -4,6 +4,7 @@ main{
 	color: $black; 
 	
 	@include breakpoint($breakpoint2) {
-		width: 100%;   
+		width: 100%;
+		margin-top: 78px;  
 	}
 }
