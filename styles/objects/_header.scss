@@ -5,7 +5,7 @@ header{
 	padding: 25px;
 	 
 	@include breakpoint($breakpoint2) {
-		padding: 20px;
+		padding: 13px;
 		width: 100%;   
 	}
 	
@@ -31,14 +31,23 @@ header{
 		margin-bottom: 20px;
 		
 		@include breakpoint($breakpoint2) {
-			margin-bottom: 0; 
-			height: 50px;   
+			margin-bottom: 0;  
 		}
 		
 		a{
-			
-			svg{
 
+			@include breakpoint($breakpoint2) {
+				height: 50px;
+				width: auto
+				display: inline-block;
+			}
+
+			svg{
+				
+				@include breakpoint($breakpoint2) {
+					width: auto;
+					height: 100%;
+				}
 			}
 		}
 	}
@@ -83,7 +92,8 @@ header{
 		@include breakpoint($breakpoint2) {
 			position: fixed;
 			top: 0;
-			right: 100%;  
+			right: 100%;
+			background-color: $main; 
 		}
 	}
 }
