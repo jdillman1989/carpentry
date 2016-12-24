@@ -13,6 +13,7 @@ $fontsizeMargin: 0.5em;
 
 a{
 	text-decoration: underline;
+	color: $tertiary;
 }
 
 strong{
@@ -30,6 +31,21 @@ p{
 	
 	&:not(:last-of-type){
 		margin-bottom: $fontsizeMargin;
+	}
+}
+
+ul{
+	list-style: disc outside;
+	margin-left: 1em;
+	margin-bottom: $fontsizeMargin;
+	font-size: $fontsizeS;
+	font-family: $body;
+	line-height: 1.2;
+	
+	li{
+	    // padding-left: 1em; 
+	    // text-indent: -0.6em;
+	    // margin-left: 0.3em;
 	}
 }
 
