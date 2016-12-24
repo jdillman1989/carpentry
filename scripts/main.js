@@ -22,12 +22,19 @@ jQuery(document).ready(function() {
 		});
 	};
 
+	jQuery(window).resize(function() {
+		if (jQuery(window).width() < 760){
+			sidebar.removeClass( sidebarScroll );
+		}
+	}
+
 	// mobile nav
 	var mobileOpenState = false;
 
 	jQuery(window).resize(function() {
 		if (jQuery(window).width() > 760 ) {
 			sidebar.css({"transform":"translate(0px, 0px)"});
+			jQuery(this).removeClass('open');
 			mobileOpenState = false;
 		}
 	});
@@ -35,10 +42,12 @@ jQuery(document).ready(function() {
 	jQuery('#mobileNav').click(function() {
 		if (mobileOpenState) {
 			sidebar.css({"transform":"translate(0px, 0px)"});
+			jQuery(this).removeClass('open');
 			mobileOpenState = false;
 		} 
 		else{
 			sidebar.css({"transform":"translate(" + -1 * (sidebar.outerWidth()) + "px, 0px)"});
+			jQuery(this).addClass('open');
 			mobileOpenState = true;
 		};
 	});
