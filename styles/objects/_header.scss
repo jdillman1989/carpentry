@@ -155,6 +155,11 @@ header{
 		bottom: $padding1;
 		
 		@include breakpoint($breakpoint2) {
+			left: $padding2;
+			bottom: $padding2;
+		}
+		
+		@include breakpoint($breakpoint2) {
 			display: none;
 		}
 		
@@ -168,6 +173,11 @@ header{
 			display: flex;
 			align-items: center;
 			margin-bottom: 0;
+			
+			@include breakpoint($breakpoint1) {
+				font-size: $fontsizeXS; 
+				height: 20px; 
+			}
 			
 			&:hover{
 				text-decoration: underline;
