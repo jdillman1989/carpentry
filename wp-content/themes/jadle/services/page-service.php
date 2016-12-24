@@ -16,6 +16,7 @@ class Page_Service {
 		setup_postdata($post);
 
 		$context = Timber::get_context();
+		$context['title'] = get_the_title();
 		$context['content'] = get_the_content();
 		Timber::render( theme_views . '/page.twig', $context);
 	}
