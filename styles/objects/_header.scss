@@ -9,12 +9,17 @@ header{
 		font-size: $fontsizeM; 
 		text-decoration: none;
 		margin-bottom: 15px; 
-		font-family: $headline; 
+		font-family: $headline;
+		
+		svg{
+			width: 100%;
+			height: 100%;  
+		} 
 	}
 	
 		
 	.logo{
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 		
 		a{
 			
@@ -33,11 +38,12 @@ header{
 			
 			a{
 				display: inline-block;
+				height: 60px; 
 			}
 		}
 
 		.main-nav{
-			margin-bottom: 15px;
+			margin-bottom: 30px;
 			
 			a{
 				display: block;
