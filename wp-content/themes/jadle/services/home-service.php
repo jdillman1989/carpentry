@@ -20,7 +20,7 @@ class Home_Service {
 		$context['images_uri'] = _images_uri;
 		// $context['data'] = $this->data;
 		$context['home_content'] = get_the_content();
-		var_dump($context['home_content']);
+		$context['shortcode_content'] = do_shortcode($context['home_content']);
 		Timber::render( theme_views . '/home.twig', $context);
 	}
 }
