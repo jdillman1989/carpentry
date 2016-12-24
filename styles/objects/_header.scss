@@ -79,7 +79,11 @@ header{
 			a{
 				display: inline-block;
 				height: 4vw; 
-				max-height: 55px; 
+				max-height: 55px;
+				
+				&:hover{
+					transform: translate(0px, -10px);
+				}
 				
 				@include breakpoint($breakpoint2) {
 					height: 40px;
