@@ -154,13 +154,20 @@ header{
 		left: $padding1;
 		bottom: $padding1;
 		
+		@include breakpoint($breakpoint2) {
+			display: none;
+		}
+		
 		a{
 			display: block;
 			font-size: $fontsizeS;
 			font-family: $body;
 			color: $secondary;
 			vertical-align: middle;
-			height: 25px; 
+			height: 25px;
+			display: flex;
+			align-items: center;
+			margin-bottom: 0;
 			
 			&:hover{
 				text-decoration: underline;
@@ -168,6 +175,7 @@ header{
 			
 			span{
 				display: inline-block;
+				margin-right: 0.5em;
 			}
 
 			svg{
