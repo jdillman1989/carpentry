@@ -23,26 +23,26 @@ em{
 }
 
 p{
-	font-size: ($fontsizeS) + em;
+	font-size: $fontsizeS;
 	font-family: $body; 
 	line-height: 1.2; 
 	
 	&:not(:last-of-type){
-		margin-bottom: ($fontsizeS) + em;
+		margin-bottom: $fontsizeS;
 	}
 }
 
 h3{
-	font-size: ($fontsizeM) + em;
+	font-size: $fontsizeM;
 	font-family: $headline; 
 }
 
 h2{
-	font-size: ($fontsizeL) + vw;
+	font-size: $fontsizeL;
 	font-family: $headline; 
 }
 
 h1{
-	font-size: ($fontsizeXL) + vw;
+	font-size: $fontsizeXL;
 	font-family: $headline; 
 }

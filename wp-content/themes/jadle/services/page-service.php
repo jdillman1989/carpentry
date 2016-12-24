@@ -12,11 +12,11 @@ class Page_Service {
 	}
 
 	public function load_view() {
+		global $post;
+		setup_postdata($post);
 
 		$context = Timber::get_context();
+		$context['content'] = get_the_content();
 		Timber::render( theme_views . '/page.twig', $context);
-
 	}
-
-
 }
