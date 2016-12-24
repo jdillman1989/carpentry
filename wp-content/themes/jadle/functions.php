@@ -22,7 +22,7 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
-if ( function_exists( 'acf_add_options_sub_page' ) ){
+// if ( function_exists( 'acf_add_options_sub_page' ) ){
 
     // // Example options custom post type page
     // acf_add_options_sub_page(array(
@@ -30,16 +30,16 @@ if ( function_exists( 'acf_add_options_sub_page' ) ){
     //     'parent'     => 'edit.php?post_type=archive'
     // ));
 
-	acf_add_options_sub_page(array(
-		'title'      => 'Error Page',
-		'parent'     => 'admin.php?page=site-settings'
-	));
+	// acf_add_options_sub_page(array(
+	// 	'title'      => 'Error Page',
+	// 	'parent'     => 'admin.php?page=site-settings'
+	// ));
 
     // acf_add_options_sub_page(array(
     //     'title'      => 'Search Results Page',
     //     'parent'     => 'admin.php?page=site-settings'
     // ));
-}
+// }
 
 function jdillman_remove_submenu() {
 
