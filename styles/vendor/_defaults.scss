@@ -12,12 +12,26 @@ body{
 	float: right;
 	margin-left: 20px;
 	margin-bottom: 20px;
+	@extend clearfix;
+	
+	@include breakpoint($breakpoint3) {
+		float: none;
+		display: block;
+		margin: 20px auto;
+	}
 }
 
 .alignleft{
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 20px;
+	@extend clearfix;
+	
+	@include breakpoint($breakpoint3) {
+		float: none;
+		display: block;
+		margin: 20px auto;
+	}
 }
 
 .aligncenter{
