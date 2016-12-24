@@ -40,6 +40,7 @@ header{
 				height: 50px;
 				width: auto;
 				display: inline-block;
+				margin-bottom: 0; 
 			}
 
 			svg{
@@ -62,6 +63,7 @@ header{
 			a{
 				display: inline-block;
 				height: 4vw; 
+				max-height: 55px; 
 			}
 		}
 
