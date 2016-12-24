@@ -1,5 +1,47 @@
 header{
 	width: 30%;
 	background-color: $main;
-	color: $secondary;   
+	color: $secondary;
+	padding: 15px; 
+	
+	.main-info{
+		
+		.logo{
+			
+			a{
+				
+				svg{
+					
+				}
+			}
+		}
+
+		.info{
+			
+			a{
+				display: block;
+				width: 100%; 
+			}
+		}
+	}
+
+	.nav-section{
+		
+		.social-nav{
+			display: flex;
+			justify-content: space-between;
+			
+			a{
+				display: inline-block;
+			}
+		}
+
+		.main-nav{
+			
+			a{
+				display: block;
+				width: 100%; 
+			}
+		}
+	}
 }
