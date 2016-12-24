@@ -28,10 +28,7 @@ p{
 	font-size: $fontsizeS;
 	font-family: $body; 
 	line-height: 1.2; 
-	
-	&:not(:last-of-type){
-		margin-bottom: $fontsizeMargin;
-	}
+	margin-bottom: $fontsizeMargin;
 }
 
 ul{
