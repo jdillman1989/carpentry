@@ -38,7 +38,7 @@ jQuery(document).ready(function() {
 			mobileOpenState = false;
 		} 
 		else{
-			sidebar.css({"transform":"translate(" + sidebar.outerWidth() + "px, 0px)"});
+			sidebar.css({"transform":"translate(" + -1 * (sidebar.outerWidth()) + "px, 0px)"});
 			mobileOpenState = true;
 		};
 	});
