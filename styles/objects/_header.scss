@@ -69,8 +69,8 @@ header{
 		&.stick{
 			position: fixed !important;
 			width: 30%;
-			top: 0;
-			left: $padding1;
+			top: $padding1;
+			left: 0;
 			
 			@include breakpoint($breakpoint1) {
 				left: $padding2;
