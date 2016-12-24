@@ -1,8 +1,10 @@
+$padding1: 25px;
+$padding2: 20px;
+
 header{
 	width: 30%;
 	background-color: $main;
 	color: $secondary;
-	padding: 25px;
 	
 	 
 	@include breakpoint($breakpoint2) {
@@ -36,6 +38,7 @@ header{
 	
 		
 	.logo{
+		padding: $padding1;
 		margin-bottom: 20px;
 		
 		@include breakpoint($breakpoint2) {
@@ -64,9 +67,14 @@ header{
 	.nav-section{
 		
 		.social-nav{
+			padding: $padding1;
 			display: flex;
 			justify-content: space-around;
 			margin-bottom: 15px;
+			
+			@include breakpoint($breakpoint2) {
+				padding: $padding2;
+			}
 			
 			a{
 				display: inline-block;
@@ -85,10 +93,24 @@ header{
 			a{
 				display: block;
 				width: 100%; 
+				padding: 7.5px $padding1;
+				
+				&:hover{
+					background-color: $black; 
+				}
+				
+				@include breakpoint($breakpoint2) {
+					padding: 7.5px $padding2;
+				}
 			}
 		}
 
 		.info{
+			padding: $padding1;
+			
+			@include breakpoint($breakpoint2) {
+				padding: $padding2;
+			} 
 			
 			a{
 				display: block;
@@ -113,8 +135,7 @@ header{
 			left: 100%;
 			background-color: $main; 
 			z-index: 3;
-			width: 300px;
-			padding: 20px; 
+			width: 300px; 
 			transform: translate(-300px, 0px);  
 		}
 	}
