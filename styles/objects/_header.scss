@@ -2,7 +2,7 @@ header{
 	width: 30%;
 	background-color: $main;
 	color: $secondary;
-	padding: 20px; 
+	padding: 25px; 
 	
 	a{
 		color: $secondary;
@@ -12,25 +12,14 @@ header{
 		font-family: $headline; 
 	}
 	
-	.main-info{
 		
-		.logo{
+	.logo{
+		margin-bottom: 30px;
+		
+		a{
 			
-			a{
-				
-				svg{
-					margin-bottom: 30px; 
-				}
-			}
-		}
+			svg{
 
-		.info{
-			
-			a{
-				display: block;
-				width: 100%; 
-				font-size: $fontsizeS;
-				font-family: $body 
 			}
 		}
 	}
@@ -40,6 +29,7 @@ header{
 		.social-nav{
 			display: flex;
 			justify-content: space-around;
+			margin-bottom: 15px;
 			
 			a{
 				display: inline-block;
@@ -47,10 +37,22 @@ header{
 		}
 
 		.main-nav{
+			margin-bottom: 15px;
 			
 			a{
 				display: block;
 				width: 100%; 
+			}
+		}
+
+		.info{
+			
+			a{
+				display: block;
+				width: 100%; 
+				font-size: $fontsizeS;
+				font-family: $body;
+				color: $tertiary; 
 			}
 		}
 	}
