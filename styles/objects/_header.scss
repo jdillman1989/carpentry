@@ -27,6 +27,7 @@ header{
 
 		@include breakpoint($breakpoint2) {
 			font-size: $fontsizeM; 
+			margin-bottom: 20px;
 		}
 	}
 	
@@ -68,6 +69,10 @@ header{
 				display: inline-block;
 				height: 4vw; 
 				max-height: 55px; 
+				
+				@include breakpoint($breakpoint2) {
+					height: 40px;
+				}
 			}
 		}
 
