@@ -1,3 +1,15 @@
+.home-title{
+	padding: 30px 30px 0 30px;
+	text-align: center;
+	
+	@include breakpoint($breakpoint1) {
+
+		h1{
+			font-size: $fontsizeL;	
+		}
+	}
+}
+
 @include breakpoint($breakpoint1) {
 	#global-content{
 		#sb_instagram.sbi_col_3 #sbi_images .sbi_item{
