@@ -1,5 +1,4 @@
 <?php
-// Bring your own comments.
 
 global $post;
 

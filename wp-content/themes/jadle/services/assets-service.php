@@ -39,6 +39,11 @@ class Assets_Service {
 	public function load_js() {
 
 		new Slate_Jquery;
+
+		if (is_page_template('template_gallery.php')) {
+			new Slate_JS('cycle2.js');
+		}
+
 		new Slate_JS('main.js');
 
 		// wp_localize_script('react/app.js', 'ug', array('ajax_url' => admin_url('admin-ajax.php')));
