@@ -1,0 +1,29 @@
+.gallery-carousel{
+	padding: 15px 0; 
+	
+	.carousel-container{
+		width: 100%; 
+		
+		.carousel-item{
+			
+		}
+
+		.carousel-nav{
+			width: 50%;
+			margin: 0 auto; 
+			display: flex;
+			justify-content: space-around;
+			 
+			.carousel-pip{
+				width: 20px;
+				height: 20px;
+				border-radius: 20;
+				background-color: $tertiary; 
+			}
+		}
+	}
+}
+
+.gallery-content{
+	padding: 15px 0;
+}
