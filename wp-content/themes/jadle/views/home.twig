@@ -1,8 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="home-title">
+<div class="home-content">
 	<h1>{{home_title}}</h1>
+	{{home_content}}
 </div>
-{{shortcode_content}}
+{% if include_feed %}
+	{{feed_content}}
+{% endif %}
 {% endblock %}

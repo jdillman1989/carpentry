@@ -62,4 +62,11 @@ h1{
 	font-size: $fontsizeXL;
 	font-family: $headline;
 	margin-bottom: $fontsizeMargin;
+	
+	@include breakpoint($breakpoint1) {
+		
+		h1{
+			font-size: $fontsizeL;	
+		}
+	}
 }
