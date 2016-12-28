@@ -10,7 +10,9 @@
 					<div class="cycle-slideshow" data-cycle-swipe=true data-cycle-fx="scrollHorz" data-cycle-timeout="0" data-cycle-slides="> article" data-cycle-pager="#carousel-pager-{{loop.index}}" data-cycle-pager-template='<div class="carousel-pip"></div>' data-cycle-auto-height="calc">
 						{% for item in layout.carousel_slides %}
 							<article class="carousel-item">
-								{{item.carousel_content}}
+								<div class="carousel-item-container">
+									{{item.carousel_content}}
+								</div>
 							</article>
 						{% endfor %}
 					</div>

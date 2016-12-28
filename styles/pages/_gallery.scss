@@ -6,7 +6,11 @@
 		width: 100%; 
 		
 		.carousel-item{
-			
+			width: 100%;
+			 
+			.carousel-item-container{
+				margin: 0 auto; 
+			}
 		}
 
 		.carousel-nav{
