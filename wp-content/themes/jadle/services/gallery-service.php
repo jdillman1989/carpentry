@@ -21,6 +21,6 @@ class Gallery_Service {
         // $context['data'] = $this->data;
         $context['gallery_title'] = get_the_title();
         $context['gallery_layouts'] = get_field('gallery_layouts');
-        Timber::render( theme_views . '/home.twig', $context);
+        Timber::render( theme_views . '/gallery.twig', $context);
     }
 }
