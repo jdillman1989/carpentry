@@ -9,16 +9,21 @@
 		}
 
 		.carousel-nav{
-			width: 50%;
+			width: 35%;
 			margin: 0 auto; 
 			display: flex;
 			justify-content: space-around;
 			 
 			.carousel-pip{
-				width: 20px;
-				height: 20px;
-				border-radius: 20;
+				width: 15px;
+				height: 15px;
+				border-radius: 15px;
+				opacity: 0.66; 
 				background-color: $tertiary; 
+				
+				&.cycle-pager-active{
+					opacity: 1; 
+				}
 			}
 		}
 	}
