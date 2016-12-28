@@ -1,5 +1,6 @@
 .gallery-carousel{
 	padding: 15px 0; 
+	margin-bottom: 15px; 
 	
 	.carousel-container{
 		width: 100%; 
@@ -18,7 +19,7 @@
 				width: 15px;
 				height: 15px;
 				border-radius: 15px;
-				opacity: 0.66; 
+				opacity: 0.5; 
 				background-color: $tertiary; 
 				
 				&.cycle-pager-active{
@@ -30,5 +31,5 @@
 }
 
 .gallery-content{
-	padding: 15px 0;
+	padding: 15px 0 0 0;
 }
