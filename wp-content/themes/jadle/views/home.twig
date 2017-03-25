@@ -10,7 +10,7 @@
 {% else %}
 <div class="home-images">
 	{% for image in home_images %}
-		<div class="home-image" style="background-image:url({{image.home_image.url}}); background-size:cover;"></div>
+		<div class="home-image" style="background-image:url({{image.home_image.url}}); background-size:cover; background-position:center center;"></div>
 	{% endfor %}
 </div>
 {% endif %}
