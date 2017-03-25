@@ -23,8 +23,7 @@ main{
 	.alignright{
 		float: right;
 		margin-left: 20px;
-		margin-bottom: 20px;
-		
+		margin-bottom: 20px;		
 		@include breakpoint($breakpoint3) {
 			float: none;
 			display: block;
