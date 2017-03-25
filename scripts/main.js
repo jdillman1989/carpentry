@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
 	// unwrap images
 	jQuery('img').each(function() {
-		if (jQuery(this).parent().is('p')) {
+		if (jQuery(this).parent().is('p') && jQuery(this).hasClass('alignright')) {
 			jQuery(this).unwrap();
 		}
 	});
