@@ -38,6 +38,7 @@
 				opacity: 0.3; 
 				background-color: $tertiary; 
 				cursor: pointer;
+				z-index: 300; 
 				
 				&.cycle-pager-active{
 					opacity: 1; 
