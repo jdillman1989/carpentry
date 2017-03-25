@@ -50,12 +50,11 @@ function jdillman_remove_submenu() {
 
 add_action( 'admin_menu', 'jdillman_remove_submenu', 999 );
 
-function filter_ptags_on_images($content) {
-    $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-    return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+function img_unautop($pee) {
+    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<div class="figure">$1</div>', $pee);
+    return $pee;
 }
-add_filter('acf_the_content', 'filter_ptags_on_images', 9999);
-add_filter('the_content', 'filter_ptags_on_images', 9999);
+add_filter( 'the_content', 'img_unautop', 30 );
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
