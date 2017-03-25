@@ -7,5 +7,11 @@
 </div>
 {% if include_feed %}
 	{{feed_content}}
+{% else %}
+<div class="home-images">
+	{% for image in home_images %}
+		<img src="{{image.home_image.url}}" alt="{{image.home_image.alt}}">
+	{% endfor %}
+</div>
 {% endif %}
 {% endblock %}

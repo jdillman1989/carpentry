@@ -3,6 +3,16 @@
 	text-align: center;
 }
 
+.home-images{
+	display: flex;
+	flex-wrap: wrap;
+	
+	img{
+		height: 240px;
+		width: auto;  
+	}
+}
+
 @include breakpoint($breakpoint1) {
 	#global-content{
 		#sb_instagram.sbi_col_3 #sbi_images .sbi_item{
