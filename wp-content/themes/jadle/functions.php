@@ -50,11 +50,5 @@ function jdillman_remove_submenu() {
 
 add_action( 'admin_menu', 'jdillman_remove_submenu', 999 );
 
-function img_unautop($pee) {
-    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<div class="figure">$1</div>', $pee);
-    return $pee;
-}
-add_filter( 'the_content', 'img_unautop', 30 );
-
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );

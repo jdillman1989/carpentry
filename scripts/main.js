@@ -1,4 +1,10 @@
 jQuery(document).ready(function() {
+	// unwrap images
+	jQuery('img').each(function() {
+		if (jQuery(this).parent().is('p')) {
+			jQuery(this).unwrap();
+		}
+	});
 
 	// sticky sidebar
 	var sidebar = jQuery('.nav-section');
