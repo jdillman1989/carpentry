@@ -6,10 +6,12 @@
 .home-images{
 	display: flex;
 	flex-wrap: wrap;
+	padding: 0 30px 30px 30px;
 	
 	img{
 		height: 240px;
-		width: auto;  
+		width: auto;
+		padding: 7px;
 	}
 }
 
