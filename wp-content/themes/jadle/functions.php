@@ -54,8 +54,8 @@ function filter_ptags_on_images($content) {
     $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
     return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
 }
-add_filter('acf_the_content', 'filter_ptags_on_images');
-add_filter('the_content', 'filter_ptags_on_images');
+add_filter('acf_the_content', 'filter_ptags_on_images', 9999);
+add_filter('the_content', 'filter_ptags_on_images', 9999);
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
