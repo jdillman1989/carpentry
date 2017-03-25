@@ -51,7 +51,7 @@ function jdillman_remove_submenu() {
 add_action( 'admin_menu', 'jdillman_remove_submenu', 999 );
 
 function filter_ptags_on_images($content){
-   return preg_replace('https://cdn.css-tricks.com/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+    return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
 }
 
 add_filter('the_content', 'filter_ptags_on_images');
